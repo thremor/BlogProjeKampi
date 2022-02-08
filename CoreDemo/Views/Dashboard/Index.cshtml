@@ -1,0 +1,90 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/WriterLayout.cshtml";
+}
+
+@* gösterge (Dashboard) paneli *@
+
+<!DOCTYPE html>
+<html lang="en">
+<body>
+
+    <div class="row" id="proBanner">
+        <div class="col-12">
+            <span class="d-flex align-items-center purchase-popup">
+                <span>
+                    instagram/SMTcoder
+                    Software Developer 👨‍💻
+                    Yazılım İçerik üreticisi 🛸
+                </span>
+                <a href="https://www.instagram.com/smtcoder/" target="_blank" class="btn download-button purchase-button ml-auto">Takip Et</a>
+                <i class="mdi mdi-close" id="bannerClose"></i>
+            </span>
+        </div>
+    </div>
+    @*<div class="page-header">
+            <h3 class="page-title">
+                <span class="page-title-icon bg-gradient-primary text-white mr-2">
+                    <i class="mdi mdi-home"></i>
+                </span> Dashboard
+            </h3>
+
+        </div>*@
+    <div class="row">
+        <div class="col-md-4 stretch-card grid-margin">
+            <div class="card bg-gradient-danger card-img-holder text-white">
+                <div class="card-body">
+                    <img src="~/writer/assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
+                    <h4 class="font-weight-normal mb-3">
+                        Toplam Blog Sayısı <i class="mdi mdi-chart-line mdi-24px float-right"></i>
+                    </h4>
+                     <h2 class="mb-5">@ViewBag.ToplamBlogSayisi</h2>
+                    <h6 class="card-text"> SMTcoder </h6>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 stretch-card grid-margin">
+            <div class="card bg-gradient-info card-img-holder text-white">
+                <div class="card-body">
+                    <img src="~/writer/assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
+                    <h4 class="font-weight-normal mb-3">
+                        Sizin Blog Sayınız  <i class="mdi mdi-bookmark-outline mdi-24px float-right"></i>
+                    </h4>
+                    <h2 class="mb-5">@ViewBag.YazarinBlogSayisi</h2>
+                    <h6 class="card-text">SMTcoder</h6>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 stretch-card grid-margin">
+            <div class="card bg-gradient-success card-img-holder text-white">
+                <div class="card-body">
+                    <img src="~/writer/assets/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image" />
+                    <h4 class="font-weight-normal mb-3">
+                        Toplam Kategori Sayısı <i class="mdi mdi-diamond mdi-24px float-right"></i>
+                    </h4>
+                    <h2 class="mb-5">@ViewBag.KategoriSayisi</h2>
+                    <h6 class="card-text">SMTcoder</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @await Component.InvokeAsync("BlogListDashboard")
+
+
+    @await Component.InvokeAsync("WriterAboutOnDahsboard")
+
+    @await Component.InvokeAsync("CategoryListDashboard")
+
+    @*<script src="~/writer/assets/vendors/js/vendor.bundle.base.js"></script>
+        <script src="~/writer/assets/vendors/chart.js/Chart.min.js"></script>
+        <script src="~/writer/assets/js/off-canvas.js"></script>
+        <script src="~/writer/assets/js/hoverable-collapse.js"></script>
+        <script src="~/writer/assets/js/misc.js"></script>
+        <script src="~/writer/assets/js/dashboard.js"></script>
+        <script src="~/writer/assets/js/todolist.js"></script>*@
+
+
+</body>
+</html>

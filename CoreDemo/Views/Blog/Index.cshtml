@@ -1,0 +1,71 @@
+﻿@using EntityLayer.Concrete
+@model List<Blog>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/UserLayout.cshtml";
+}
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- Blog ındex -->
+
+<style>
+    body {
+        background-color: whitesmoke ;
+    }
+</style>
+
+<section class="main-content-w3layouts-agileits">
+    <div class="container">
+        <h3 class="tittle">Bloglar</h3>
+        <div class="inner-sec">
+            <!-- Blog ındex -->
+            <div class="left-blog-info-w3layouts-agileits text-left">
+                <div class="row">
+                    @foreach (var item in Model)
+                    {
+                        <div class="col-lg-4 card">
+                            <a href="/blog/BlogReadAll/@item.BlogId/">
+                                <img src="@item.Image"  class="card-img-top img-fluid m-2" alt="">
+                            </a>
+                            <div class="card-body">
+                                <ul class="blog-icons my-3">
+                                    <li>
+                                        <a href="#">
+                                            <i class="far fa-calendar-alt"></i>@(((DateTime)item.CreateDate).ToString("dd-MMM-yyyy"))
+                                        </a>
+                                    </li>
+                                    <li class="mx-1 my-1">
+                                        <a href="#">
+                                            <i class="far fa-comment"></i> 0
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fas fa-align-justify"></i> @item.Category.Name
+                                        </a>
+                                    </li>
+
+                                </ul>
+
+                                <h5 class="card-title">
+                                    <a href="/blog/BlogReadAll/@item.BlogId/"> @item.Title </a>
+
+                                </h5>
+                                <h6 class="card-text mb-3"> @item.Content.Substring(0, item.Content.Substring(0, 30).LastIndexOf(" "))... </h6>
+                                <a href="/blog/BlogReadAll/@item.BlogId/" class="btn btn-primary read-m">Devamını Oku...</a>
+                            </div>
+                        </div>
+                        <br /> <br /> <br />
+                    }
+                </div>
+               
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,62 @@
+﻿<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 footer-grid-agileits-w3ls text-left">
+                <h2> Hakkımızda </h2>
+                <h6 class="text-white-50">Her hikayenin bir başlangıcı vardır. İşletmenizin ne zaman, nerede ve nasıl hayata geçtiğini öğrenmek müşterilerinizin hoşuna gidecektir. Bürokratik süreciniz veya iş fikrinizin bugünlere gelişini anlatarak okuyucularınıza farklı ufuklar açabilirsiniz. Eğer..</h6>
+                <div class="read">
+                    <a href="/About/Index/" class="btn btn-primary read-m">Devamını  Oku...</a>
+                </div>
+            </div>
+            <div class="col-lg-4 footer-grid-agileits-w3ls text-left">
+
+                @await Component.InvokeAsync("BlogLast3Post")
+            </div>
+            <!-- subscribe -->
+            <div class="tech-btm">
+                <h4 class="text-light" > Haber bültenimize kaydolun </h4>
+
+                <h6 class="text-success" > <b> Yazılım, Teknoloji, Sanat ve diğer bloglar... </b>   </h6>
+                <form action="/NewsLetter/SubscribeMail/" method="post">
+                    <input type="email" placeholder="Email" required="" name="Mail">
+                    <input type="submit" value="Abone Ol">
+                </form>
+
+            </div>
+        </div>
+        <!-- footer -->
+        <div class="footer-cpy text-center">
+            <div class="footer-social">
+                <div class="copyrighttop">
+                    <ul>
+                        <li class="mx-3">
+                            <a class="facebook" href="https://www.instagram.com/smtcoder/">
+                                <i class="fab fa-instagram"></i>
+                                <span>instagram</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="facebook" href="https://github.com/smtdeveloper">
+                                <i class="fab fa-github"></i>
+                                <span>Github</span>
+                            </a>
+                        </li>
+                       
+                    </ul>
+
+                </div>
+            </div>
+            <div class="w3layouts-agile-copyrightbottom">
+                <h6 class="text-white-50">
+                    © @DateTime.Now.Year  Samet Akca  | Asp.Net Core 5.0 Projesi -
+                    <a class="text-success" href="https://www.instagram.com/smtcoder/">  SMTcoder</a>
+                </h6>
+
+            </div>
+        </div>
+
+        <!-- //footer -->
+
+
+    </div>
+</footer>
